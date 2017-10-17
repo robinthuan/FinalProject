@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
-import {View, Alert} from 'react-native'
-import ButtonCpn from '../Components/ButtonCpn'
-import InputCpn from '../Components/InputCpn'
+import {View, Alert,KeyboardAvoidingView} from 'react-native'
+import ButtonCpn from '../Components/SampleComponent/ButtonCpn'
+import InputCpn from '../Components/SampleComponent/InputCpn'
 import {connect} from 'react-redux'
 import styles from './Styles'
 import Actions from '../Actions/Index'
@@ -15,7 +15,7 @@ class ChangeNumber extends Component {
 
     onIncreaseNumber() {
 
-        console.log("asas",this.state.input)
+
          if (this.onCheckInput(this.state.input) == true) {
              this.props.function.inCreaseNumber(Number(this.state.input))
          }
@@ -27,7 +27,10 @@ class ChangeNumber extends Component {
         }
 
     }
-
+onNextPress(){
+    var {navigate} = this.props.navigation
+    navigate("ShowJson_Screen",{})
+}
     onCheckInput(value) {
         if ((isNaN(value)) || (value.length =="")) {
 
@@ -36,19 +39,28 @@ class ChangeNumber extends Component {
         }
         return true;
     }
+onSend(){
+   let data={
+       input:this.state.input,
+       result:this.props.state.data
+   }
+    var {navigate} = this.props.navigation
+    navigate("Result_Screen",{dataSend:data})
+}
 
-    render() {
+render() {
         return (
-            <View style={styles.changenumber_container}>
+            <KeyboardAvoidingView behavior='padding' style={styles.changenumber_container}>
                 <InputCpn valueInput={(value) => {
                     this.setState({input: value})
                 }}
                           onIncrease={() => this.onIncreaseNumber()}
                           onDecrease={() => this.onDecreaseNumber()}
                           result={this.props.state.data}
+                          onSubmitSend={()=>{this.onSend()}}
                 />
-                <ButtonCpn/>
-            </View>
+                <ButtonCpn onNextPress={()=>{this.onNextPress()}}/>
+            </KeyboardAvoidingView>
         )
     }
 }

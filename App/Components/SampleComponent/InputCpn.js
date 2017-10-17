@@ -8,8 +8,12 @@ class InputCpn extends Component {
         return (
             <View style={styles.input_cpn_container}>
                 <View style={styles.input_cpn_container_textinput}>
-                    <TextInput style={styles.input_cpn_textinput}
+                    <TextInput
+                        style={styles.input_cpn_textinput}
                     onChangeText={this.props.valueInput}
+                        returnKeyType="send"
+                        onSubmitEditing={this.props.onSubmitSend}
+
                     ></TextInput>
                 </View>
                 <View style={styles.input_cpn_container_operator}>

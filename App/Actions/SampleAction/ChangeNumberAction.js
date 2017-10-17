@@ -1,4 +1,4 @@
-import * as types from './ActionTypes'
+import * as types from '../ActionTypes'
 export function inCreaseNumber(number) {
     return{
         type:types.INCREASE_NUMBER,

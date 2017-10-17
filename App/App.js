@@ -1,5 +1,5 @@
 import React,{ Component} from 'react'
-import ChangeNumber from './Layouts/ChangeNumber'
+import Index from './Layouts/index'
 import { Provider} from 'react-redux'
 import store from './Stores/StoreConfig'
 export default class App extends Component {
@@ -12,7 +12,7 @@ export default class App extends Component {
     render(){
         return(
             <Provider store={store}>
-             <ChangeNumber/>
+             <Index/>
             </Provider>
         )
     }

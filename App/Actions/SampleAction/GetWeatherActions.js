@@ -1,6 +1,6 @@
-import ApiConfig from '../Utills/Apiconfig'
-import * as types from './ActionTypes'
-import ApiService from '../Utills/ApiSevice'
+import ApiConfig from '../../Utills/Apiconfig'
+import * as types from '../ActionTypes'
+import ApiService from '../../Utills/ApiSevice'
 
 export function getWeatherOfCity(city) {
     return (dispatch) => {
@@ -14,14 +14,14 @@ export function getWeatherOfCity(city) {
                         console.log(jsonObj)
                         dispatch({
                             type: types.GET_WEATHER_SUCCESS,
-                            data: jsonObj
+                            json: jsonObj
                         })
                     }
 
                     else {
                         dispatch({
                             type: types.GET_WEATHER_FAIL,
-                            data: "FAIL"
+                            json: "FAIL"
                         })
                     }
                 })
