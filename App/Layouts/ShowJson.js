@@ -11,11 +11,12 @@ class  ShowJson extends Component {
     }
     componentWillMount(){
      this.props.function.getWeatherOfCity('London')
-    }
+
+}
     render(){
         return(
             <View style={{flex:1}}>
-                <Text style={{flex:1}}>{this.props.state.json}</Text>
+                <Text style={{flex:1}}>{JSON.stringify(this.props.state.json)}</Text>
             </View>
         )
     }

@@ -2,7 +2,7 @@ import * as Types from '../Actions/ActionTypes'
 const initialState={
     action:'',
     data:10,
-    json:{},
+    json:[],
     result:''
 }
 export default (state=initialState,action)=>{
