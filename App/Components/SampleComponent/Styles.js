@@ -9,7 +9,7 @@ export default styles = StyleSheet.create({
 
 
         height:60,
-        marginTop:30,
+        marginTop:10,
 
     },
     input_cpn_textinput: {

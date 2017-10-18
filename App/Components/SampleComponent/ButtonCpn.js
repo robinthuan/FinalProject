@@ -9,6 +9,7 @@ export class ButtonCpn extends Component {
             <View style={styles.button_cpn_container}>
                 <TouchableOpacity style={styles.button_cpn_touch_conatiner}
                                   onPress={this.props.onNextPress}>
+
                     <Text style={styles.button_cpn_text}>NEXT</Text>
                 </TouchableOpacity>
 

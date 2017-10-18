@@ -1,11 +1,10 @@
 import * as Types from '../Actions/ActionTypes'
-const initialState={
-    action:'',
-    data:10,
-    json:[],
-    result:''
+const initState= {
+    action: '',
+    data: 10,
+    json: [],
 }
-export default (state=initialState,action)=>{
+export default (state = initState,action)=>{
     state.action = action.type
     switch (action.type){
         case Types.INCREASE_NUMBER:

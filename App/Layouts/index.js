@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import {View} from 'react-native'
-import Router from './Router'
+import Router from './SampleScreen/Router'
 import {connect} from 'react-redux'
 class Index extends Component{
     render(){
