@@ -33,6 +33,7 @@ class Result extends Component {
                            placeholder={this.state.input}
                            onChangeText={(_input)=>{this.setState({input:_input})}}
                            returnKeyType="done"
+                           returnKeyLabel="done"
                            onSubmitEditing={()=>this.onReturn()}/>
 
                 <Text style={styles.result_text}>Result:{this.state.result}</Text>

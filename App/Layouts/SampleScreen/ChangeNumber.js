@@ -62,25 +62,19 @@ class ChangeNumber extends Component {
 
     _renderInput(){
         return(
-            <InputCpn valueInput={(value) => {
-                this.setState({input: value})
-            }}
+            <InputCpn valueInput={(value) => {this.setState({input: value})}}
                       onIncrease={() => this._onIncreaseNumber()}
                       onDecrease={() => this._onDecreaseNumber()}
                       result={this.props.state.data}
                       inputholder={this.state.input}
-                      onSubmitSend={() => {
-                          this._onSend()
-                      }}/>
+                      onSubmitSend={() => {this._onSend()}}/>
         )
     }
     render() {
         return (
             <View style={styles.changenumber_container}>
                 {this._renderInput()}
-                <ButtonCpn onNextPress={() => {
-                    this._onNextPress()
-                }}/>
+                <ButtonCpn onNextPress={() => {this._onNextPress()}}/>
             </View>
         )
     }
